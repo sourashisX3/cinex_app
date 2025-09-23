@@ -1,8 +1,8 @@
-import 'package:cinex_app/common/constants/strings/app_string_constants.dart';
 import 'package:cinex_app/common/constants/size_constants.dart';
+import 'package:cinex_app/common/constants/strings/app_string_constants.dart';
 import 'package:cinex_app/common/extensions/common_functions.dart';
 import 'package:cinex_app/generated/assets.dart';
-import 'package:cinex_app/presentation/journeys/onboardings/screens/second_onboarding_screen.dart';
+import 'package:cinex_app/presentation/journeys/nav/app_nav_bar.dart';
 import 'package:cinex_app/presentation/journeys/onboardings/widgets/skip_button.dart';
 import 'package:cinex_app/presentation/libraries/AppContents/FlutterPageTransition/src/enum.dart';
 import 'package:cinex_app/presentation/libraries/FlutterSizer/flutter_sizer.dart';
@@ -10,8 +10,8 @@ import 'package:cinex_app/presentation/themes/app_theme.dart';
 import 'package:cinex_app/presentation/widgets/forward_button.dart';
 import 'package:flutter/material.dart';
 
-class FirstOnboardingScreen extends StatelessWidget {
-  const FirstOnboardingScreen({super.key});
+class ThirdOnboardinScreen extends StatelessWidget {
+  const ThirdOnboardinScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class FirstOnboardingScreen extends StatelessWidget {
             SizedBox(
               height: getScreenHeight(context),
               width: getScreenWidth(context),
-              child: Image.asset(Assets.imagesIronMan, fit: BoxFit.cover),
+              child: Image.asset(Assets.imagesBomkesh, fit: BoxFit.cover),
             ),
             // Gradient Overlay
             Positioned(
@@ -60,7 +60,7 @@ class FirstOnboardingScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    AppStringConstants.onBoardingTitle1,
+                    AppStringConstants.onBoardingTitle2,
                     textAlign: TextAlign.center,
                     style: AppTheme.darkTheme.textTheme.titleLarge,
                   ),
@@ -70,7 +70,7 @@ class FirstOnboardingScreen extends StatelessWidget {
                       openScreenWithTransition(
                         context,
                         PageTransitionType.rightToLeft,
-                        const SecondOnboardingScreen(),
+                        const AppNavBar(),
                       );
                     },
                   ),

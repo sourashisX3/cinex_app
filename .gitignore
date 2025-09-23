@@ -47,3 +47,8 @@ app.*.map.json
 # Local environment files
 .env
 .env.*
+
+# ignore chatmodels folder
+chatmodels/
+# GitHub environment files
+.github/

@@ -1,4 +1,7 @@
+import 'package:cinex_app/common/extensions/common_functions.dart';
+import 'package:cinex_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import '../../../themes/app_color.dart';
 import 'FlutterPhoenix/flutter_phoenix.dart';
 
@@ -18,25 +21,27 @@ class RedScreen extends StatelessWidget {
     return Material(
       child: SafeArea(
         child: Container(
-          constraints:
-              BoxConstraints(minHeight: MediaQuery.of(context).size.height),
+          constraints: BoxConstraints(
+            minHeight: MediaQuery.of(context).size.height,
+          ),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                /* Lottie.asset(
-                  'assets/animations/something_wrong.json',
+                Lottie.asset(
+                  Assets.animationsSomethingWrong,
                   width: getScreenWidth(context),
                   height: 250,
-                ), */
+                ),
                 const Text(
                   'OOPS!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      color: AppColor.bottomDarkMode),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    color: AppColor.white,
+                  ),
                   maxLines: 4,
                   softWrap: false,
                   overflow: TextOverflow.ellipsis,
@@ -47,9 +52,10 @@ class RedScreen extends StatelessWidget {
                     'Something went wrong.\nPlease try again.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 12,
-                        color: Colors.white70),
+                      fontWeight: FontWeight.normal,
+                      fontSize: 12,
+                      color: Colors.white70,
+                    ),
                     maxLines: 4,
                     softWrap: false,
                     overflow: TextOverflow.ellipsis,
@@ -64,7 +70,8 @@ class RedScreen extends StatelessWidget {
                     style: ButtonStyle(
                       //minimumSize: MaterialStateProperty.all(const Size(50, 30)),
                       padding: WidgetStateProperty.all(
-                          const EdgeInsets.symmetric(horizontal: 55)),
+                        const EdgeInsets.symmetric(horizontal: 55),
+                      ),
                       backgroundColor: WidgetStateProperty.all(Colors.green),
 
                       elevation: WidgetStateProperty.all(6),
@@ -81,9 +88,10 @@ class RedScreen extends StatelessWidget {
                     child: Text(
                       'Reload',
                       style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.white70),
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.white70,
+                      ),
                     ),
                   ),
                 ),

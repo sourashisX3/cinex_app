@@ -53,7 +53,9 @@ class Sizes {
   );
 
   // ---------- Common UI sizes and semantic names ----------
-  static const double iconSize = 26;
+  static const double iconSize = 24;
+  static const double iconSizeMedium = 18;
+  static const double iconSizeSmall = 12;
   static const double listTileIconSize = 18;
   static const double appBarIconSize = 24;
   static const double fabSize = 56;
@@ -153,6 +155,7 @@ class Sizes {
   static const double dimen_310 = 310;
   static const double dimen_320 = 320;
   static const double dimen_350 = 350;
+  static const double dimen_360 = 360;
   static const double dimen_400 = 400;
   static const double dimen_450 = 450;
 
@@ -187,6 +190,8 @@ class FontSizes {
   static const double subtitle = 16;
   static const double subtitleSmall = 14;
   static const double body = 14;
+  static const double bodyMedium = 16;
+  static const double bodyLarge = 18;
   static const double bodySmall = 12;
   static const double caption = 11;
   static const double small = 10;

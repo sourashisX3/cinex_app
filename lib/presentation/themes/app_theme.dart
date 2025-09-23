@@ -6,16 +6,38 @@ import 'package:flutter/material.dart';
 class AppTheme {
   AppTheme._();
   static final ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: AppColor.scaffoldLight,
+    scaffoldBackgroundColor: AppColor.white,
     brightness: Brightness.light,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColor.buttonLightMode,
+        backgroundColor: AppColor.primaryActionColor,
       ),
     ),
+
+    /*  colorScheme: ColorScheme.fromSwatch().copyWith(
+      primary: AppColor.primaryActionColor,
+      brightness: Brightness.light,
+    ), */
     textTheme: TextTheme(
-      bodySmall: TextStyle(color: AppColor.textLightMode),
-      bodyLarge: TextStyle(color: AppColor.textLightMode),
+      bodySmall: TextStyle(
+        color: AppColor.black,
+        fontFamily: FontFamilyConstants.zalandoSansRegular,
+      ),
+      bodyMedium: TextStyle(
+        color: AppColor.black,
+        fontSize: FontSizes.bodyMedium,
+        fontFamily: FontFamilyConstants.zalandoSansMedium,
+      ),
+      bodyLarge: TextStyle(
+        color: AppColor.black,
+        fontSize: FontSizes.bodyLarge,
+        fontFamily: FontFamilyConstants.zalandoSansSemiBold,
+      ),
+      titleLarge: TextStyle(
+        color: AppColor.black,
+        fontSize: FontSizes.headingLarge,
+        fontFamily: FontFamilyConstants.zalandoSansBlack,
+      ),
     ),
   );
 
@@ -23,15 +45,34 @@ class AppTheme {
     scaffoldBackgroundColor: AppColor.black,
     brightness: Brightness.dark,
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(backgroundColor: AppColor.buttonDarkMode),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: AppColor.primaryActionColor,
+      ),
     ),
+    /* colorScheme: ColorScheme.fromSwatch().copyWith(
+      primary: AppColor.primaryActionColor,
+      brightness: Brightness.dark,
+    ), */
     textTheme: TextTheme(
-      bodySmall: TextStyle(color: AppColor.textDarkMode),
+      bodySmall: TextStyle(
+        color: AppColor.white,
+        fontSize: FontSizes.bodySmall,
+        fontFamily: FontFamilyConstants.zalandoSansRegular,
+      ),
       bodyLarge: TextStyle(
+        color: AppColor.white,
+        fontSize: FontSizes.bodyLarge,
+        fontFamily: FontFamilyConstants.zalandoSansSemiBold,
+      ),
+      bodyMedium: TextStyle(
+        color: AppColor.white,
+        fontSize: FontSizes.bodyMedium,
+        fontFamily: FontFamilyConstants.zalandoSansMedium,
+      ),
+      titleLarge: TextStyle(
         color: AppColor.white,
         fontSize: FontSizes.headingLarge,
         fontFamily: FontFamilyConstants.zalandoSansBlack,
-        
       ),
     ),
   );

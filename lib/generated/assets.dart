@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String animationsSomethingWrong = 'assets/animations/something_wrong.json';
   static const String cinexApp = '.env';
   static const String fontsZalandoSansExpandedBlack = 'assets/fonts/ZalandoSansExpanded-Black.ttf';
   static const String fontsZalandoSansExpandedBold = 'assets/fonts/ZalandoSansExpanded-Bold.ttf';
