@@ -2,9 +2,13 @@ import 'package:cinex_app/common/constants/strings/app_string_constants.dart';
 import 'package:cinex_app/common/constants/size_constants.dart';
 import 'package:cinex_app/common/extensions/common_functions.dart';
 import 'package:cinex_app/generated/assets.dart';
+import 'package:cinex_app/presentation/journeys/nav/app_nav_bar.dart';
 import 'package:cinex_app/presentation/journeys/onboardings/screens/second_onboarding_screen.dart';
 import 'package:cinex_app/presentation/journeys/onboardings/widgets/skip_button.dart';
 import 'package:cinex_app/presentation/libraries/AppContents/FlutterPageTransition/src/enum.dart';
+import 'package:cinex_app/presentation/libraries/AppContents/flutter_animator/animation/animation_preferences.dart';
+import 'package:cinex_app/presentation/libraries/AppContents/flutter_animator/widgets/fading_entrances/fade_in_down.dart';
+import 'package:cinex_app/presentation/libraries/AppContents/flutter_animator/widgets/fading_entrances/fade_in_up.dart';
 import 'package:cinex_app/presentation/libraries/FlutterSizer/flutter_sizer.dart';
 import 'package:cinex_app/presentation/themes/app_theme.dart';
 import 'package:cinex_app/presentation/widgets/forward_button.dart';
@@ -47,7 +51,7 @@ class FirstOnboardingScreen extends StatelessWidget {
               right: Sizes.dimen_16,
               child: SkipButton(
                 onTap: () {
-                  /*TODO */
+                  openScreenWithoutBack(context, const AppNavBar());
                 },
               ),
             ),
@@ -59,20 +63,27 @@ class FirstOnboardingScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    AppStringConstants.onBoardingTitle1,
-                    textAlign: TextAlign.center,
-                    style: AppTheme.darkTheme.textTheme.titleLarge,
+                  FadeInDown(
+                    child: Text(
+                      AppStringConstants.onBoardingTitle1,
+                      textAlign: TextAlign.center,
+                      style: AppTheme.darkTheme.textTheme.titleLarge,
+                    ),
                   ),
                   const SizedBox(height: Sizes.dimen_16),
-                  ForwardButton(
-                    onTap: () {
-                      openScreenWithTransition(
-                        context,
-                        PageTransitionType.rightToLeft,
-                        const SecondOnboardingScreen(),
-                      );
-                    },
+                  FadeInUp(
+                    preferences: AnimationPreferences(
+                      duration: Duration(seconds: 2),
+                    ),
+                    child: ForwardButton(
+                      onTap: () {
+                        openScreenWithTransition(
+                          context,
+                          PageTransitionType.rightToLeft,
+                          const SecondOnboardingScreen(),
+                        );
+                      },
+                    ),
                   ),
                 ],
               ),

@@ -21,6 +21,7 @@ class RedScreen extends StatelessWidget {
     return Material(
       child: SafeArea(
         child: Container(
+          color: Theme.of(context).scaffoldBackgroundColor,
           constraints: BoxConstraints(
             minHeight: MediaQuery.of(context).size.height,
           ),
@@ -34,28 +35,20 @@ class RedScreen extends StatelessWidget {
                   width: getScreenWidth(context),
                   height: 250,
                 ),
-                const Text(
+                Text(
                   'OOPS!',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                    color: AppColor.white,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                   maxLines: 4,
                   softWrap: false,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 16),
                   child: Text(
                     'Something went wrong.\nPlease try again.',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 12,
-                      color: Colors.white70,
-                    ),
+                    style: Theme.of(context).textTheme.bodyMedium,
                     maxLines: 4,
                     softWrap: false,
                     overflow: TextOverflow.ellipsis,
@@ -72,14 +65,16 @@ class RedScreen extends StatelessWidget {
                       padding: WidgetStateProperty.all(
                         const EdgeInsets.symmetric(horizontal: 55),
                       ),
-                      backgroundColor: WidgetStateProperty.all(Colors.green),
+                      backgroundColor: WidgetStateProperty.all(
+                        AppColor.primaryActionColor,
+                      ),
 
                       elevation: WidgetStateProperty.all(6),
                       shape: WidgetStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           side: const BorderSide(
-                            color: Colors.green,
+                            color: AppColor.primaryActionColor,
                             width: 1.0,
                           ),
                         ),
@@ -87,11 +82,9 @@ class RedScreen extends StatelessWidget {
                     ),
                     child: Text(
                       'Reload',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.white70,
-                      ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodyMedium!.copyWith(color: AppColor.white),
                     ),
                   ),
                 ),
