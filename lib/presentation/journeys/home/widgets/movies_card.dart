@@ -13,13 +13,15 @@ class MoviesCard extends StatelessWidget {
   final String? title;
   final double? rating;
   final VoidCallback? onTap;
+  final bool isRatingsVisible;
 
   const MoviesCard({
     super.key,
     this.imageUrl,
     this.title,
     this.rating,
-     this.onTap,
+    this.onTap,
+    this.isRatingsVisible = true,
   });
 
   @override
@@ -84,24 +86,26 @@ class MoviesCard extends StatelessWidget {
                         ],
                       ),
                     ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            title ?? 'Unknown',
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const SizedBox(width: Sizes.dimen_8),
-                        RatingSection(rating: rating),
-                      ],
-                    ),
+                    child: isRatingsVisible
+                        ? Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  title ?? 'Unknown Title',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              const SizedBox(width: Sizes.dimen_8),
+                              RatingSection(rating: rating),
+                            ],
+                          )
+                        : const SizedBox.shrink(),
                   ),
                 ),
               ],

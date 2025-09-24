@@ -22,4 +22,12 @@ class AppStringConstants {
   static const String editNow = "Edit Now";
   static const String doYouWantToEditYourProfile =
       "Do you want to edit your profile?\n";
+
+  /// details screen
+  static const String genres = "Genres";
+  static const String overview = "Overview";
+  static String releasedOn(String date) => "Released on $date";
+
+  /// search screen
+  static const String searchMovies = "Search Movies";
 }

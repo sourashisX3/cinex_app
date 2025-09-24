@@ -4,7 +4,7 @@ import 'package:cinex_app/common/extensions/common_functions.dart';
 import 'package:cinex_app/presentation/journeys/home/widgets/profile_avatar.dart';
 import 'package:cinex_app/presentation/journeys/home/widgets/theme_button.dart';
 import 'package:cinex_app/presentation/themes/app_color.dart';
-import 'package:cinex_app/presentation/themes/theme_bloc/theme_cubit.dart';
+import 'package:cinex_app/data/bloc/theme_bloc/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

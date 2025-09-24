@@ -188,6 +188,7 @@ class FontSizes {
   static const double headingLarge = 22; // main screen headings
   static const double headline = 36; // loginPageHeading equivalent
   static const double subtitle = 16;
+  static const double title = 20;
   static const double subtitleSmall = 14;
   static const double body = 14;
   static const double bodyMedium = 16;

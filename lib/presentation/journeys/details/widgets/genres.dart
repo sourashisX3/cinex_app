@@ -9,14 +9,22 @@ class Genres extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Sizes.dimen_24,
+      margin: const EdgeInsets.only(right: Sizes.dimen_8),
+      padding: const EdgeInsets.symmetric(
+        horizontal: Sizes.dimen_12,
+        vertical: Sizes.dimen_4,
+      ),
       decoration: BoxDecoration(
         color: AppColor.primaryActionColor,
         borderRadius: BorderRadius.circular(Sizes.dimen_12),
       ),
       child: Text(
         genres,
-        style: Theme.of(context).textTheme.bodySmall,
+        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+          color: Colors.white,
+          fontSize: FontSizes.small,
+          fontWeight: FontWeight.w500,
+        ),
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
