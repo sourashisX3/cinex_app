@@ -1,6 +1,7 @@
 import 'package:cinex_app/common/constants/size_constants.dart';
 import 'package:cinex_app/common/constants/strings/button_names.dart';
 import 'package:cinex_app/common/extensions/common_functions.dart';
+import 'package:cinex_app/presentation/libraries/AppContents/TapAnimations/bouncy_tap_animation.dart';
 import 'package:cinex_app/presentation/themes/app_color.dart';
 import 'package:cinex_app/presentation/themes/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -11,9 +12,8 @@ class ForwardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return BouncyTapAnimation(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(Sizes.dimen_25),
       child: Container(
         width: getScreenWidth(context),
         height: Sizes.dimen_50,

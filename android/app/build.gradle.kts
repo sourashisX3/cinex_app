@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.example.cinex_app"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = (project.findProperty("NDK_VERSION") as String?).takeIf { !it.isNullOrEmpty() } ?: flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

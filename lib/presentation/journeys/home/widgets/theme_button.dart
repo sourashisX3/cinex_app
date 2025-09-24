@@ -1,4 +1,5 @@
 import 'package:cinex_app/common/constants/size_constants.dart';
+import 'package:cinex_app/presentation/libraries/AppContents/TapAnimations/bouncy_tap_animation.dart';
 import 'package:cinex_app/presentation/themes/app_color.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class ThemeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return BouncyTapAnimation(
       onTap: onTap,
       child: Container(
         height: Sizes.dimen_32,

@@ -16,4 +16,10 @@ class AppStringConstants {
 
   /// profile screen
   static const String profile = "Your Profile";
+  static const String fullName = "Full Name";
+  static const String emailAddress = "Email Address";
+  static const String phoneNumber = "Phone Number";
+  static const String editNow = "Edit Now";
+  static const String doYouWantToEditYourProfile =
+      "Do you want to edit your profile?\n";
 }

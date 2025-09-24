@@ -11,7 +11,7 @@ import 'package:cinex_app/presentation/libraries/AppContents/flutter_animator/wi
 import 'package:cinex_app/presentation/libraries/AppContents/flutter_animator/widgets/fading_entrances/fade_in_up.dart';
 import 'package:cinex_app/presentation/libraries/FlutterSizer/flutter_sizer.dart';
 import 'package:cinex_app/presentation/themes/app_theme.dart';
-import 'package:cinex_app/presentation/widgets/forward_button.dart';
+import 'package:cinex_app/presentation/widgets/Buttons/forward_button.dart';
 import 'package:flutter/material.dart';
 
 class FirstOnboardingScreen extends StatelessWidget {

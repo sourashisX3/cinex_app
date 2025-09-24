@@ -1,7 +1,10 @@
 import 'package:cinex_app/common/constants/size_constants.dart';
 import 'package:cinex_app/common/constants/strings/app_string_constants.dart';
+import 'package:cinex_app/common/extensions/common_functions.dart';
+import 'package:cinex_app/presentation/journeys/details/screens/movie_details_screen.dart';
 import 'package:cinex_app/presentation/journeys/home/widgets/home_app_bar.dart';
 import 'package:cinex_app/presentation/journeys/home/widgets/movies_card.dart';
+import 'package:cinex_app/presentation/libraries/AppContents/FlutterPageTransition/src/enum.dart';
 import 'package:cinex_app/presentation/libraries/AppContents/flutter_animator/flutter_animator.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     FadeInRight(
                       child: InkWell(
                         onTap: () {
-                          /*TODO */
+                          /*TODO : view all */
                         },
                         child: Text(
                           AppStringConstants.viewAll,
@@ -79,7 +82,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.symmetric(
                             vertical: MoviesCard.verticalPadding,
                           ),
-                          child: const MoviesCard(
+                          child: MoviesCard(
+                            onTap: () {
+                              openScreenWithTransition(
+                                context,
+                                PageTransitionType.fade,
+                                const MovieDetailsScreen(),
+                              );
+                            },
                             imageUrl:
                                 "https://image.tmdb.org/t/p/w500/s0Mlo5w4INp3bUdsJo3RaSSMXWz.jpg",
                           ),
@@ -104,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     FadeInRight(
                       child: InkWell(
                         onTap: () {
-                          /*TODO */
+                          /*TODO : view all  */
                         },
                         child: Text(
                           AppStringConstants.viewAll,
@@ -133,7 +143,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.symmetric(
                             vertical: MoviesCard.verticalPadding,
                           ),
-                          child: const MoviesCard(
+                          child: MoviesCard(
+                            onTap: () {
+                              openScreenWithTransition(
+                                context,
+                                PageTransitionType.fade,
+                                const MovieDetailsScreen(),
+                              );
+                            },
                             /* imageUrl:
                                 "https://image.tmdb.org/t/p/w500/s0Mlo5w4INp3bUdsJo3RaSSMXWz.jpg", */
                           ),
@@ -158,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     FadeInRight(
                       child: InkWell(
                         onTap: () {
-                          /*TODO */
+                          /*TODO : view all */
                         },
                         child: Text(
                           AppStringConstants.viewAll,
@@ -187,7 +204,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.symmetric(
                             vertical: MoviesCard.verticalPadding,
                           ),
-                          child: const MoviesCard(
+                          child: MoviesCard(
+                            onTap: () {
+                              // openScreen(context, const MovieDetailsScreen());
+                              openScreenWithTransition(
+                                context,
+                                PageTransitionType.fade,
+                                const MovieDetailsScreen(),
+                              );
+                            },
                             title: "Inception: The IMAX Experience",
                             rating: 7.8,
                             imageUrl:

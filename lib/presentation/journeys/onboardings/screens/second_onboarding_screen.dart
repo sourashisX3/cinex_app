@@ -9,7 +9,7 @@ import 'package:cinex_app/presentation/libraries/AppContents/FlutterPageTransiti
 import 'package:cinex_app/presentation/libraries/AppContents/flutter_animator/flutter_animator.dart';
 import 'package:cinex_app/presentation/libraries/FlutterSizer/flutter_sizer.dart';
 import 'package:cinex_app/presentation/themes/app_theme.dart';
-import 'package:cinex_app/presentation/widgets/forward_button.dart';
+import 'package:cinex_app/presentation/widgets/Buttons/forward_button.dart';
 import 'package:flutter/material.dart';
 
 class SecondOnboardingScreen extends StatelessWidget {
