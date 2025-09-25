@@ -68,7 +68,7 @@ import 'package:flutter/material.dart';
   }
 
   ////------  Block use here -------
-/* Future<bool> checkInternet(BuildContext context) async {
+/* Future<bool> checkInternet() async {
   late bool isConnectedToInternet;
   if (kIsWeb) {
     isConnectedToInternet = true;
