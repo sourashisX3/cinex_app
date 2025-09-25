@@ -52,3 +52,6 @@ app.*.map.json
 chatmodels/
 # GitHub environment files
 .github/
+
+# Firebase
+firebase.json

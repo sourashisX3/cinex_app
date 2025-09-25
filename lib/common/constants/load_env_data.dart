@@ -4,4 +4,6 @@ class LoadEnvData {
   LoadEnvData._();
 
   static String apiKey = dotenv.env['API_KEY'] ?? '';
+  static String baseUrl = dotenv.env['BASE_URL'] ?? '';
+  static String imageBaseUrl = dotenv.env['IMAGE_BASE_URL'] ?? '';
 }

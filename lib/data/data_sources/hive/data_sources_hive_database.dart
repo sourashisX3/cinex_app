@@ -1,9 +1,24 @@
-import 'package:cinex_app/data/data_sources/hive_database_keys.dart';
+import 'dart:io';
+import 'package:cinex_app/data/data_sources/hive/hive_database_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 
 class HiveDatabase {
+  /// HIVE Database Box -------------------------------
   static late Box box;
+
+  //initialize HIVE ---------------------------------------
+  static initializeHive() async {
+    Directory directory = await getApplicationDocumentsDirectory();
+    debugPrint('---- Path: ${directory.path}');
+    try {
+      Hive.init('${directory.path}/hive');
+      HiveDatabase.box = await Hive.openBox('rallyup_box');
+    } catch (e) {
+      debugPrint('---- Failed to local/create hive: $e');
+    }
+  }
 
   /// Firebase related -------------------------------
   String getFirebaseToken() {

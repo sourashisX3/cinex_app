@@ -43,6 +43,7 @@ class ModernAppTextField extends StatelessWidget {
   final TextStyle? hintStyle;
   String? Function(String?)? validator;
   double? radius;
+  final String? errorText;
   ModernAppTextField({
     super.key,
     this.textEditingController,
@@ -77,6 +78,7 @@ class ModernAppTextField extends StatelessWidget {
     this.retypepassword = "",
     this.readonly = false,
     this.labeltext = "",
+    this.errorText,
     this.ontap,
     this.selfValidate = false,
     this.validator,
@@ -180,7 +182,7 @@ class ModernAppTextField extends StatelessWidget {
         contentPadding: contentPadding ?? const EdgeInsets.fromLTRB(6, 0, 0, 0),
         //const EdgeInsets.symmetric(vertical: 20, horizontal: 18),
         hintText: hinttext,
-
+        errorText: errorText,
         hintStyle: hintStyle,
         fillColor: fillColor ?? Theme.of(context).scaffoldBackgroundColor,
         filled: true,
@@ -222,6 +224,14 @@ class ModernAppTextField extends StatelessWidget {
           fontSize: 12, // Adjust the font size
           height: 0.5, // Reducing the height can help remove extra padding
           color: Colors.red.shade400, // You can change the error text color
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(radius ?? Sizes.dimen_12),
+          borderSide: BorderSide(color: Colors.red.shade400, width: 1.0),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(radius ?? Sizes.dimen_12),
+          borderSide: BorderSide(color: Colors.red.shade400, width: 1.0),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radius ?? Sizes.dimen_12),

@@ -1,7 +1,7 @@
 import 'package:cinex_app/data/di/dependency_init.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import '../../../data/data_sources/data_sources_hive_database.dart';
+import '../../../data/data_sources/hive/data_sources_hive_database.dart';
 import '../../themes/app_color.dart';
 
 class UnauthenticatedScreen extends StatelessWidget {

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "34526330432",
+    "project_id": "modern-uis",
+    "storage_bucket": "modern-uis.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34526330432:android:8138c4886e07ffc018e9a5",
+        "android_client_info": {
+          "package_name": "com.example.cars_x_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1TswYA9gJPzrhlusVKdiia1vFAweNe70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34526330432:android:a2c9e2cd9ff67c4e18e9a5",
+        "android_client_info": {
+          "package_name": "com.example.cinex_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1TswYA9gJPzrhlusVKdiia1vFAweNe70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,12 +2,16 @@ import 'package:cinex_app/common/constants/size_constants.dart';
 import 'package:cinex_app/common/constants/strings/app_string_constants.dart';
 import 'package:cinex_app/common/constants/strings/button_names.dart';
 import 'package:cinex_app/common/constants/strings/debugger_tags.dart';
+import 'package:cinex_app/common/extensions/common_functions.dart';
+import 'package:cinex_app/data/di/dependency_init.dart';
+import 'package:cinex_app/presentation/journeys/auth/screens/login_screen.dart';
 import 'package:cinex_app/presentation/journeys/home/widgets/profile_avatar.dart';
 import 'package:cinex_app/presentation/libraries/AppContents/flutter_animator/flutter_animator.dart';
 import 'package:cinex_app/presentation/themes/app_color.dart';
 import 'package:cinex_app/presentation/themes/font_family_constants.dart';
 import 'package:cinex_app/presentation/widgets/Buttons/primary_button.dart';
 import 'package:cinex_app/presentation/widgets/TextFields/modern_app_text_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -34,6 +38,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         centerTitle: true,
         elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {
+              getIt<FirebaseAuth>().signOut();
+              openScreenWithoutBack(context, const LoginScreen());
+              debugPrint("$debuggerTagProfile: logout tapped");
+            },
+            icon: const Icon(Icons.logout),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Padding(
