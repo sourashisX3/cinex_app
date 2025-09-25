@@ -123,6 +123,12 @@ flutter test
 - Introduce stronger typing for stored Hive objects and automatic migration strategy.
 - Add Crashlytics / remote logging for production diagnostics.
 
+## Some Images
+<img width="1920" height="1080" alt="m1" src="https://github.com/user-attachments/assets/ff798fd1-1d4b-4cb0-a301-3cdcb3cfdc8a" />
+<img width="1920" height="1080" alt="m2" src="https://github.com/user-attachments/assets/1721e61b-7322-4e85-bfa1-f984e1267205" />
+<img width="1920" height="1080" alt="m3" src="https://github.com/user-attachments/assets/a5d4794a-6498-4336-b699-162592d28976" />
+
+
 ## Contact / notes
 
 If you review this project and want to run it or ask questions, open an issue in the repo or reach out to me. The code is intentionally small and focused to make the review quick and to highlight architecture and engineering choices.
