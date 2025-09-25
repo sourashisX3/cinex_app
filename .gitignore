@@ -55,3 +55,4 @@ chatmodels/
 
 # Firebase
 firebase.json
+**/firebase_options.dart
