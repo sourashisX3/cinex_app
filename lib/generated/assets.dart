@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String animationsEmptySearchData = 'assets/animations/empty_search_data.json';
   static const String animationsSomethingWrong = 'assets/animations/something_wrong.json';
   static const String cinexApp = '.env';
   static const String fontsZalandoSansExpandedBlack = 'assets/fonts/ZalandoSansExpanded-Black.ttf';
@@ -9,6 +10,7 @@ class Assets {
   static const String fontsZalandoSansExpandedMedium = 'assets/fonts/ZalandoSansExpanded-Medium.ttf';
   static const String fontsZalandoSansExpandedRegular = 'assets/fonts/ZalandoSansExpanded-Regular.ttf';
   static const String fontsZalandoSansExpandedSemiBold = 'assets/fonts/ZalandoSansExpanded-SemiBold.ttf';
+  static const String imagesAppLogo = 'assets/images/app_logo.jpeg';
   static const String imagesBomkesh = 'assets/images/bomkesh.jpg';
   static const String imagesFighter = 'assets/images/fighter.jpg';
   static const String imagesIronMan = 'assets/images/iron_man.jpg';

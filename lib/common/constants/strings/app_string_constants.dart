@@ -46,4 +46,10 @@ class AppStringConstants {
 
   /// search screen
   static const String searchMovies = "Search Movies";
+
+  /// App messages
+  static const String unauthorizedTxt = "Unauthorized";
+  static const String somethingWentWrong = "Something went wrong!";
+  static const String noMoviesFound = "No movies found!";
+  static const String pleaseTryAgain = "Please try again.";
 }

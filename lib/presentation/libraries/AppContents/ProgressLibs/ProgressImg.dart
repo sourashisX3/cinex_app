@@ -1,3 +1,6 @@
+import 'package:cinex_app/common/constants/size_constants.dart';
+import 'package:cinex_app/generated/assets.dart';
+import 'package:cinex_app/presentation/themes/app_color.dart';
 import 'package:flutter/material.dart';
 import '../flutter_animator/widgets/zooming_entrances/zoom_in.dart';
 
@@ -6,11 +9,12 @@ class ProgressImage extends StatelessWidget {
   final double cardElevation;
   final double extendSize;
 
-  const ProgressImage(
-      {super.key,
-      required this.cardBgColor,
-      required this.cardElevation,
-      required this.extendSize});
+  const ProgressImage({
+    super.key,
+    required this.cardBgColor,
+    required this.cardElevation,
+    required this.extendSize,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +24,7 @@ class ProgressImage extends StatelessWidget {
           color: cardBgColor,
           elevation: cardElevation,
           shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(50.0),
-            ),
+            borderRadius: BorderRadius.all(Radius.circular(50.0)),
           ),
           //shadowColor: Colors.orange.shade100,
           child: Stack(
@@ -33,18 +35,19 @@ class ProgressImage extends StatelessWidget {
                 width: 70 + extendSize,
                 height: 70 + extendSize,
                 child: CircularProgressIndicator(
-                  // TODO: change the progress color
-                  // color: AppColor.yellowRegular,
+                  color: AppColor.primaryActionColor,
                 ),
               ),
-              /* Image.asset(
-                // TODO: change the logo here
-                Assets.appAppLogo,
-                fit: BoxFit.contain,
-                width: 40 + extendSize,
-                height: 40 + extendSize,
-                // color: AppColor.primaryColorDeepDark,
-              ), */
+              ClipRRect(
+                borderRadius: BorderRadius.circular(Sizes.dimen_50),
+                child: Image.asset(
+                  Assets.imagesAppLogo,
+                  fit: BoxFit.contain,
+                  width: 40 + extendSize,
+                  height: 40 + extendSize,
+                  // color: AppColor.primaryColorDeepDark,
+                ),
+              ),
             ],
           ),
         ),

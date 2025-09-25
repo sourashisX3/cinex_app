@@ -4,6 +4,7 @@ import 'package:cinex_app/data/data_sources/hive/data_sources_hive_database.dart
 import 'package:cinex_app/presentation/bloc_providers.dart';
 import 'package:cinex_app/presentation/journeys/auth/bloc/auth_cubit.dart';
 import 'package:cinex_app/presentation/journeys/auth/bloc/auth_states.dart';
+import 'package:cinex_app/presentation/libraries/AppContents/ProgressLibs/LoaderOverlay.dart';
 import 'package:cinex_app/presentation/libraries/AppContents/RedScreen/red_screen.dart';
 import 'package:cinex_app/presentation/libraries/FlutterSizer/flutter_sizer.dart';
 import 'package:cinex_app/presentation/routes.dart';
@@ -26,10 +27,11 @@ class RootApp extends StatefulWidget {
   State<RootApp> createState() => _RootAppState();
 }
 
-class _RootAppState extends State<RootApp> {
+class _RootAppState extends State<RootApp> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
       return const RedScreen();
     };
@@ -44,8 +46,22 @@ class _RootAppState extends State<RootApp> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
     HiveDatabase.box.close();
+  }
+
+  @override
+  void didChangePlatformBrightness() {
+    super.didChangePlatformBrightness();
+    try {
+      if (mounted) {
+        final cubit = context.read<ThemeCubit>();
+        if (cubit.followSystem) cubit.updateFromSystem();
+      }
+    } catch (_) {
+      // ignore if ThemeCubit isn't available yet
+    }
   }
 
   @override
@@ -76,16 +92,16 @@ class _RootAppState extends State<RootApp> {
                       return const ConnectivityWrapper();
                     } else if (authState is AuthLoading ||
                         authState is AuthInitial) {
-                      return const Scaffold(
-                        body: Center(child: CircularProgressIndicator()),
+                      return Scaffold(
+                        body: Center(child: showSimpleLoaderOverlay()),
                       );
                     } else if (authState is AuthError) {
-                      return const Scaffold(
-                        body: Center(child: CircularProgressIndicator()),
+                      return Scaffold(
+                        body: Center(child: showSimpleLoaderOverlay()),
                       );
                     }
-                    return const Scaffold(
-                      body: Center(child: CircularProgressIndicator()),
+                    return Scaffold(
+                      body: Center(child: showSimpleLoaderOverlay()),
                     );
                   },
                   listener: (context, authState) {
